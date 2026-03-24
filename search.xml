@@ -4,6 +4,27 @@
   
     
     <entry>
+      <title>Hexo + Algolia 接入踩坑记录（applicationID / 搜索失效问题）</title>
+      <link href="/2026/03/24/algolia%E9%83%A8%E7%BD%B2%E7%A2%B0%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98/"/>
+      <url>/2026/03/24/algolia%E9%83%A8%E7%BD%B2%E7%A2%B0%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98/</url>
+      
+        <content type="html"><![CDATA[<center> <h1> hexo + algolia 配置碰到的问题 </h1> </center><h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>在使用 Hexo + Butterfly Theme 搭建博客后，尝试接入 Algolia 实现全文搜索。</p><h2 id="配置参数相关"><a href="#配置参数相关" class="headerlink" title="配置参数相关"></a>配置参数相关</h2><p>根目录的_config需要配置的内容是</p><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">algolia:</span></span><br><span class="line">  <span class="attr">applicationID:</span> <span class="string">&lt;Algolia</span> <span class="string">控制台中的</span> <span class="string">Application</span> <span class="string">ID&gt;</span></span><br><span class="line">  <span class="attr">indexName:</span> <span class="string">&lt;自定义的</span> <span class="string">index</span> <span class="string">名称，例如</span> <span class="string">blogs,在search中创建&gt;</span></span><br></pre></td></tr></table></figure><p>然后WriteAPIKey是基于修改环境系统变量做到的</p><h2 id="Application-ID未识别"><a href="#Application-ID未识别" class="headerlink" title="Application ID未识别"></a>Application ID未识别</h2><p>虽然 <code>_config.yml</code> 中已经配置：</p><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">algolia:</span></span><br><span class="line">  <span class="attr">appId:</span> <span class="string">xxx</span></span><br><span class="line">  <span class="attr">indexName:</span> <span class="string">xxx</span></span><br></pre></td></tr></table></figure><p>但插件未正确读取 appId。</p><p>报错是</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">FATAL Something<span class="string">&#x27;s wrong. Maybe you can find the solution here: https://hexo.io/docs/troubleshooting.html AlgoliaSearchError: Please provide an application ID. Usage: algoliasearch(applicationID, apiKey, opts)</span></span><br></pre></td></tr></table></figure><p>基于报错分析字段名应该为<strong>applicationID</strong></p><p>这部分是大模型给出的相关配置，然后我发现报错后看了下原因，推测是由于 hexo-algolia 插件版本兼容问题，导致 appId字段未被正确解析，需要使用 applicationID，实际情况由版本决定。</p><h2 id="前端部署相关"><a href="#前端部署相关" class="headerlink" title="前端部署相关"></a>前端部署相关</h2><p>我使用的是butterfly主题，个人感觉还是比较美观，其默认使用本地搜索，考虑长期发展的话，需要修改如下参数</p><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">search:</span> </span><br><span class="line"><span class="attr">use:</span> <span class="string">algolia_search</span></span><br></pre></td></tr></table></figure><h2 id="最终配置"><a href="#最终配置" class="headerlink" title="最终配置"></a>最终配置</h2><p>根目录 <code>_config.yml</code></p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">algolia:</span><br><span class="line">  applicationID: xxxx</span><br><span class="line">  indexName: xxxx</span><br></pre></td></tr></table></figure><p>_config.butterfly.yml</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">search:</span><br><span class="line">  use: algolia_search</span><br><span class="line"></span><br><span class="line">algolia:</span><br><span class="line">  appId: xxxxx</span><br><span class="line">  apiKey: 你的SearchAPIKey</span><br><span class="line">  indexName: xxxxx</span><br></pre></td></tr></table></figure><h2 id="summary"><a href="#summary" class="headerlink" title="summary"></a>summary</h2><p>整个过程结合大模型会比较通顺，需要注意目录的切换（尤其是使用了主题的场景），使用大模型的过程也要有自己的思考和对报错的分析能力，祝各位顺利！</p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> learning </tag>
+            
+            <tag> start </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>我的第一篇博客</title>
       <link href="/2026/03/24/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/"/>
       <url>/2026/03/24/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/</url>
@@ -14,9 +35,9 @@
       
         <tags>
             
-            <tag> start </tag>
-            
             <tag> learning </tag>
+            
+            <tag> start </tag>
             
             <tag> record </tag>
             

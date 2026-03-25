@@ -7,7 +7,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://litt1e-c.github.io/img/butterfly-icon.png">
 <meta property="article:published_time" content="2026-03-24T13:54:40.000Z">
-<meta property="article:modified_time" content="2026-03-24T14:59:30.343Z">
+<meta property="article:modified_time" content="2026-03-25T05:04:13.333Z">
 <meta property="article:author" content="Litt1e-c">
 <meta property="article:tag" content="learning">
 <meta property="article:tag" content="start">
@@ -19,7 +19,7 @@
   "url": "https://litt1e-c.github.io/2026/03/24/algolia%E9%83%A8%E7%BD%B2%E7%A2%B0%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98/",
   "image": "https://litt1e-c.github.io/img/butterfly-icon.png",
   "datePublished": "2026-03-24T13:54:40.000Z",
-  "dateModified": "2026-03-24T14:59:30.343Z",
+  "dateModified": "2026-03-25T05:04:13.333Z",
   "author": [
     {
       "@type": "Person",
@@ -160,7 +160,7 @@
   isHighlightShrink: false,
   isToc: true,
   pageType: 'post'
-}</script><meta name="generator" content="Hexo 8.1.1"></head><body><div class="post" id="body-wrap"><header class="post-bg" id="page-header"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">小西的博客</span></a><a class="nav-page-title" href="/"><span class="site-name">Hexo + Algolia 接入踩坑记录（applicationID / 搜索失效问题）</span><span class="site-name"><i class="fa-solid fa-circle-arrow-left"></i><span>  返回首页</span></span></a></span><div id="menus"></div></nav><div id="post-info"><h1 class="post-title">Hexo + Algolia 接入踩坑记录（applicationID / 搜索失效问题）</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2026-03-24T13:54:40.000Z" title="发表于 2026-03-24 21:54:40">2026-03-24</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2026-03-24T14:59:30.343Z" title="更新于 2026-03-24 22:59:30">2026-03-24</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">浏览量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="container post-content" id="article-container"><center> <h1> hexo + algolia 配置碰到的问题 </h1> </center>
+}</script><meta name="generator" content="Hexo 8.1.1"></head><body><div class="post" id="body-wrap"><header class="post-bg" id="page-header"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">小西的博客</span></a><a class="nav-page-title" href="/"><span class="site-name">Hexo + Algolia 接入踩坑记录（applicationID / 搜索失效问题）</span><span class="site-name"><i class="fa-solid fa-circle-arrow-left"></i><span>  返回首页</span></span></a></span><div id="menus"></div></nav><div id="post-info"><h1 class="post-title">Hexo + Algolia 接入踩坑记录（applicationID / 搜索失效问题）</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2026-03-24T13:54:40.000Z" title="发表于 2026-03-24 21:54:40">2026-03-24</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2026-03-25T05:04:13.333Z" title="更新于 2026-03-25 13:04:13">2026-03-25</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">浏览量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="container post-content" id="article-container"><center> <h1> hexo + algolia 配置碰到的问题 </h1> </center>
 
 <h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>在使用 Hexo + Butterfly Theme 搭建博客后，尝试接入 Algolia 实现全文搜索。</p>
 <h2 id="配置参数相关"><a href="#配置参数相关" class="headerlink" title="配置参数相关"></a>配置参数相关</h2><p>根目录的_config需要配置的内容是</p>

@@ -1,0 +1,24 @@
+/* 默认 */
+body {
+  cursor: url('/img/cursor/Default.cur'), auto;
+}
+
+/* 链接 */
+a, button {
+  cursor: url('/img/cursor/Link.cur'), pointer;
+}
+
+/* 输入框 */
+input, textarea {
+  cursor: url('/img/cursor/IBeam.cur'), text;
+}
+
+/* 禁止 */
+.disabled, [disabled] {
+  cursor: url('/img/cursor/Unavailable.cur'), not-allowed;
+}
+
+/* 图片放大（可选） */
+img:hover {
+  cursor: url('/img/cursor/Zoomin.cur'), zoom-in;
+}

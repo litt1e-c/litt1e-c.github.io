@@ -22,3 +22,16 @@ input, textarea {
 img:hover {
   cursor: url('/img/cursor/Zoomin.png'), zoom-in;
 }
+
+* {
+  transition: all 0.2s ease;
+}
+
+#recent-posts .recent-post-item {
+  transition: all 0.3s ease;
+}
+
+#recent-posts .recent-post-item:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+}

@@ -35,7 +35,3 @@ img:hover {
   transform: translateY(-6px);
   box-shadow: 0 12px 30px rgba(0,0,0,0.15);
 }
-
-.no-global-loading ~ #loading {
-  display: none !important;
-}
